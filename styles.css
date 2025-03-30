@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menu-bar {
+    background-color: #333;
+    padding: 15px;
+}
+
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-bar li {
+    margin: 0 20px;
+}
+
+.menu-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-bar a:hover {
+    color: #ddd;
+}
+
+.map-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.map img {
+    width: 100%;  /* 화면 너비에 맞게 조절 */
+    max-width: 800px; /* 최대 너비 설정 (원하는 크기로 조정 가능) */
+    height: auto;  /* 비율 유지 */
+    display: block;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+.map-label {
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+    text-align: center;
+    font-weight: bold; /* 굵게 */
+}
+/* 순서별 색상 지정 */
+.map-label:nth-child(3) { color: #333333; font-size: 20px} /* 경기도 - 짙은 회색 */
+.map-label:nth-child(4) { color: #4A2F00; font-size: 20px} /* 강원도 - 진한 갈색 */
+.map-label:nth-child(5) { color: #FF4500; font-size: 20px} /* 충청남도 - 밝은 주황색 */
+.map-label:nth-child(6) { color: #1A3C7A; font-size: 20px} /* 충청북도 - 짙은 남색 */
+.map-label:nth-child(7) { color: #D81B60; font-size: 20px} /* 경상북도 - 밝은 핑크 */
+.map-label:nth-child(8) { color: #2F4F4F; font-size: 20px} /* 경상남도 - 다크 슬레이트 그레이 */
+.map-label:nth-child(9) { color: #8B008B; font-size: 20px} /* 전라남도 - 다크 마젠타 */
+.map-label:nth-child(10) { color: #006400; font-size: 20px} /* 전라북도 - 다크그린린 */
+.map-label:nth-child(11) { color: #000000; font-size: 20px} /* 제주도 - 검정정 */

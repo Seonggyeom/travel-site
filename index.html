@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>국내 여행 가이드</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .map {
+            position: relative; /* 텍스트 오버레이 기준점 */
+            display: inline-block; /* 가운데 정렬 유지 */
+        }
+        .map-label {
+            position: absolute; /* 지도 위에 고정 */
+            color: black;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            pointer-events: none; /* 클릭 방지 */
+            text-align: center;
+            /* 줌에 대응하기 위해 위치를 % 단위로 조정 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 상단 메뉴바 -->
+    <header>
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">여행지</a></li>
+                <li><a href="#">추천 코스</a></li>
+                <li><a href="#">문의</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 지도 영역 -->
+    <main>
+        <div class="map-container">
+            <h2>국내 여행 지도</h2>
+            <div class="map">
+                <img src="map.png" alt="한국 지도" usemap="#korea-map">
+                <map name="korea-map">
+                    <area shape="poly" coords="309,118,346,158,365,235,328,260,278,248,258,177" href="gyeonggi.html" alt="경기도" title="경기도">
+                    <area shape="poly" coords="317,115,430,103,505,240,381,237,371,197,344,148" href="gangwon.html" alt="강원도" title="강원도">
+                    <area shape="poly" coords="322,271,342,355,265,354,237,263" href="chungnam.html" alt="충청남도" title="충청남도">
+                    <area shape="poly" coords="437,250,383,241,342,259,335,302,348,342,372,363,393,345,374,305" href="chungbuk.html" alt="충청북도" title="충청북도">
+                    <area shape="poly" coords="510,252,444,256,385,303,401,342,388,369,418,396,477,400,516,396" href="gyeongbuk.html" alt="경상북도" title="경상북도">
+                    <area shape="poly" coords="381,378,358,419,383,500,515,492,515,406,425,406" href="gyeongnam.html" alt="경상남도" title="경상남도">
+                    <area shape="poly" coords="252,434,351,443,370,529,271,568,207,486" href="jeonnam.html" alt="전라남도" title="전라남도">
+                    <area shape="poly" coords="273,366,364,366,350,434,261,426" href="jeonbuk.html" alt="전라북도" title="전라북도">
+                    <area shape="poly" coords="221,626,297,624,295,669,228,674" href="jeju.html" alt="제주도" title="제주도">
+                </map>
+                <!-- 지역 이름 추가 (퍼센트 단위로 위치 조정) -->
+                <div class="map-label" style="left: 36%; top: 22.5%;">경기도</div>
+                <div class="map-label" style="left: 48%; top: 20%;">강원도</div>
+                <div class="map-label" style="left: 32%; top: 37.5%;">충청남도</div>
+                <div class="map-label" style="left: 42.5%; top: 32%;">충천북도</div>
+                <div class="map-label" style="left: 50%; top: 40%;">경상북도</div>
+                <div class="map-label" style="left: 47%; top: 53%;">경상남도</div>
+                <div class="map-label" style="left: 32%; top: 59%;">전라남도</div>
+                <div class="map-label" style="left: 34%; top: 48%;">전라북도</div>
+                <div class="map-label" style="left: 29%; top: 79%;">제주도</div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
