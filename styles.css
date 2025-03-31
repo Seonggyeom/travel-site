@@ -62,3 +62,13 @@ body {
 .map-label:nth-child(9) { color: #8B008B; font-size: 20px} /* 전라남도 - 다크 마젠타 */
 .map-label:nth-child(10) { color: #006400; font-size: 20px} /* 전라북도 - 다크그린린 */
 .map-label:nth-child(11) { color: #000000; font-size: 20px} /* 제주도 - 검정정 */
+
+.map {
+    position: relative; /* 텍스트 오버레이 기준점 */
+    display: inline-block; /* 가운데 정렬 유지 */
+}
+@media (max-width: 600px) {
+    .map-label {
+        font-size: 16px; /* 작은 화면에서 글자 크기 줄이기 */
+    }
+}
