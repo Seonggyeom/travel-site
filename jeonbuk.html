@@ -34,3 +34,42 @@
         <section class="region-menu-section">
             <h2>전북 지역</h2>
             <div class="region-buttons">
+                <button class="region-btn active" data-region="jeonju">전주</button>
+                <button class="region-btn" data-region="gunsan">군산</button>
+                <button class="region-btn" data-region="iksan">익산</button>
+                <button class="region-btn" data-region="muju">무주</button>
+            </div>
+        </section>
+
+        <section class="description-section">
+            <h2 id="region-title">전주</h2>
+            <p id="region-description">
+                전주는 전통 한옥이 밀집해 있어 한국의 전통 가옥 음식 복식을 체험할 수 있는 명소입니다 비빔밥의 본고장으로 유명하며 한지,전통술,판소리 등 다양한 전통문화 콘텐츠를 체험할 수 있어 외국인 관광객들에게도 인기가 많습니다.
+            </p>
+        </section>
+
+        <section class="image-section">
+            <h2>지역 이미지</h2>
+            <img id="region-image" src="picture/jeonju.jpg" alt="전주사진">
+        </section>
+    </main>
+
+    <!-- 로그인 모달 -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>로그인</h2>
+            <form>
+                <label for="username">아이디:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">로그인</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript 연결 -->
+    <script src="script.js"></script>
+</body>
+</html>
