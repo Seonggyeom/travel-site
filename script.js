@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'geoje island': {
             title: '거제도',
             description: '거제도는 경상남도에서 가장 큰 섬으로 깨끗한 해변과 푸른 바다 아름다운 산세가 어우러진 자연 휴양지입니다 인근에는 아름다운 해양 식물원으로 유명하며 관광객들이 많이 찾는 명소입니다',
-            image: 'picture/geoje island.jpg',
+            image: 'picture/geoje_island.jpg',
             alt: '거제도 이미지'
         },
         'tongyeong': {
