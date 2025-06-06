@@ -1,25 +1,5 @@
 /* DOM 로드 완료 후 실행 */
 document.addEventListener('DOMContentLoaded', () => {
-    /* 로그인 모달 제어 */
-    const loginBtn = document.querySelector('.login-btn');
-    const modal = document.querySelector('#login-modal');
-    const closeBtn = document.querySelector('.close');
-
-    if (loginBtn && modal && closeBtn) {
-        loginBtn.addEventListener('click', () => {
-            modal.style.display = 'block';
-        });
-
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    }
 
 /* 슬라이더 제어 */
     const slides = document.querySelectorAll('.slide');

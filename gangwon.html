@@ -2,13 +2,14 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>강원도 여행 가이드</title>
+    <title>강원도 여행 정보</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="korea.icon" type="image/x-icon">
 </head>
 <body>
     <header>
             <div class="header-top">
-                <h1><a href="index.html" style="text-decoration: none; color: inherit;">3조 제목</a></h1>
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">한국 곳곳의 매력을 만나다</a></h1>
                 <ul class="menu-list">
                     <li><a href="gyeonggi.html">경기도</a></li>
                     <li><a href="gangwon.html">강원도</a></li>
@@ -20,10 +21,10 @@
                     <li><a href="jeonnam.html">전라남도</a></li>
                     <li><a href="jeju.html">제주도</a></li>
                 </ul>
-                <div class="auth-buttons">
-                    <a href="map.html" class="map-button">지도 보기</a>
-                    <button class="login-btn">로그인</button>
-                    <button class="signup-btn">회원가입</button>
+                <div>
+                    <a href="map.html" class="map-button">
+                        <img src="/picture/map.png" alt="map">
+                    </a>
                 </div>
             </div>
         </header>
@@ -54,20 +55,7 @@
         </section>
     </main>
 
-    <!-- 로그인 모달 -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">×</span>
-            <h2>로그인</h2>
-            <form>
-                <label for="username">아이디:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">비밀번호:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">로그인</button>
-            </form>
-        </div>
-    </div>
+    
 
     <!-- JavaScript 연결 -->
     <script src="script.js"></script>
