@@ -2,12 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>지도 보기</title>
+    <title>전라남도 여행 정보</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=0tuou09kei"></script>
     <link rel="icon" href="korea.icon" type="image/x-icon">
 </head>
-<body class="map-page">
+<body>
     <header>
             <div class="header-top">
                 <h1><a href="index.html" style="color: inherit;">한국 곳곳의 매력을 만나다</a></h1>
@@ -41,26 +40,35 @@
         </header>
 
 
-    <!-- 지도 영역 -->
-    <main>
-        <div class="map-container">
-            <div class="map" id="map"></div>
-        </div>
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+        <section class="region-menu-section">
+            <h2>서울 지역</h2>
+            <div class="region-buttons">
+                <button class="region-btn active" data-region="gangnam">강남</button>
+                <button class="region-btn" data-region="myeongdong">명동</button>
+                <button class="region-btn" data-region="hongdae">홍대</button>
+                <button class="region-btn" data-region="itaewon">이태원</button>
+            </div>
+        </section>
+
+        <section class="description-section">
+            <h2 id="region-title">강남</h2>
+            <p id="region-description">
+              강남은 서울의 현대적인 중심지로, 고층 빌딩과 럭셔리 쇼핑몰, 트렌디한 카페와 레스토랑이 즐비합니다. COEX몰과 강남역 주변의 활기찬 밤문화를 즐길 수 있습니다.   
+            </p>
+        </section>
+
+        <section class="image-section">
+            <h2>지역 이미지</h2>
+            <img id="region-image" src="picture/gangnam.jpg" alt="강남사진">
+        </section>
+
     </main>
 
-   
+    
 
+    <!-- JavaScript 연결 -->
     <script src="script.js"></script>
-    <script>
-        // 네이버 지도 API 로드 후 지도 초기화 호출
-        window.onload = function() {
-            if (typeof naver !== 'undefined' && naver.maps) {
-                console.log("네이버 지도 API 로드 완료");
-                initializeMap(); // script.js에서 정의된 함수 호출
-            } else {
-                console.error("네이버 지도 API 로드 실패");
-            }
-        };
-    </script>
 </body>
 </html>

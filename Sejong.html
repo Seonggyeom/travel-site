@@ -2,12 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>지도 보기</title>
+    <title>전라남도 여행 정보</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=0tuou09kei"></script>
     <link rel="icon" href="korea.icon" type="image/x-icon">
 </head>
-<body class="map-page">
+<body>
     <header>
             <div class="header-top">
                 <h1><a href="index.html" style="color: inherit;">한국 곳곳의 매력을 만나다</a></h1>
@@ -41,26 +40,35 @@
         </header>
 
 
-    <!-- 지도 영역 -->
-    <main>
-        <div class="map-container">
-            <div class="map" id="map"></div>
-        </div>
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+        <section class="region-menu-section">
+            <h2>세종 지역</h2>
+            <div class="region-buttons">
+                <button class="region-btn active" data-region="jochiwon">조치원</button>
+                <button class="region-btn" data-region="geumnam">금남</button>
+                <button class="region-btn" data-region="yeongi">연기</button>
+                <button class="region-btn" data-region="boram">보람</button>
+            </div>
+        </section>
+
+        <section class="description-section">
+            <h2 id="region-title">조치원</h2>
+            <p id="region-description">
+              조치원은 세종시의 역사적인 중심지로, 조치원 전통시장과 세종호수공원이 위치해 있습니다. 전통과 현대가 어우러진 분위기에서 맛있는 로컬 음식을 즐길 수 있습니다.   
+            </p>
+        </section>
+
+        <section class="image-section">
+            <h2>지역 이미지</h2>
+            <img id="region-image" src="picture/jochiwon.jpg" alt="조치원 사진">
+        </section>
+
     </main>
 
-   
+    
 
+    <!-- JavaScript 연결 -->
     <script src="script.js"></script>
-    <script>
-        // 네이버 지도 API 로드 후 지도 초기화 호출
-        window.onload = function() {
-            if (typeof naver !== 'undefined' && naver.maps) {
-                console.log("네이버 지도 API 로드 완료");
-                initializeMap(); // script.js에서 정의된 함수 호출
-            } else {
-                console.error("네이버 지도 API 로드 실패");
-            }
-        };
-    </script>
 </body>
 </html>

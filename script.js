@@ -1,6 +1,32 @@
 /* DOM 로드 완료 후 실행 */
 document.addEventListener('DOMContentLoaded', () => {
 
+
+/* 메뉴바 스크롤 제어 */
+    const menuList = document.querySelector('.menu-list');
+    const menuPrevBtn = document.querySelector('.menu-prev');
+    const menuNextBtn = document.querySelector('.menu-next');
+
+    if (menuList && menuPrevBtn && menuNextBtn) {
+        const menuItems = menuList.querySelectorAll('li');
+        const itemWidth = menuItems[0]?.offsetWidth || 0; // 각 메뉴 항목의 너비
+        const scrollAmount = itemWidth + 30; // 마진 포함 이동 거리 (margin: 0 15px이므로 30px 추가)
+
+        menuPrevBtn.addEventListener('click', () => {
+            menuList.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        menuNextBtn.addEventListener('click', () => {
+            menuList.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    }
+
 /* 슬라이더 제어 */
     const slides = document.querySelectorAll('.slide');
     const backSlideBtn = document.querySelector('.back-slide');
@@ -260,11 +286,11 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'picture/cheonan.jpg',
             alt: '천안 이미지'
         },
-        'daejeon': {
-            title: '대전',
-            description: '대전은 과학의 도시로, 국립중앙과학관, 한밭수목원, 대전시민천문대가 유명합니다. 유성온천과 대청호반길은 힐링 명소로, 칼국수와 성심당 튀김 소보로 등 지역 별미도 큰 매력입니다.',
-            image: 'picture/daejeon.jpg',
-            alt: '대전 이미지'
+        'buyeo': {
+            title: '부여',
+            description: '부여는 백제의 고도로, 궁남지, 백제문화단지, 국립부여박물관 등 역사 유적이 풍부합니다. 능산리 고분군과 부소산성은 역사 속 산책 코스로, 부여 연꽃빵과 구드래국밥 등 전통 먹거리도 인기를 끌고 있습니다.',
+            image: 'picture/buyeo.jpg',
+            alt: '부여 이미지'
         },
         //충북
         'jecheon': {
@@ -290,7 +316,207 @@ document.addEventListener('DOMContentLoaded', () => {
             description: '충주는 충주호와 탄금대가 있는 호수의 도시로, 수상 스포츠와 레저 활동이 활발합니다. 중원탑평리칠층석탑과 지역 특산물인 사과, 고구마로 유명하며, 자연과 역사를 함께 즐길 수 있습니다.',
             image: 'picture/chungju.jpg',
             alt: '충주 이미지'
-        }
+        },
+        //부산
+        'haeundae': {
+            title: '해운대',
+            description: '해운대는 부산의 대표적인 해변 지역으로, 넓은 백사장과 고층 빌딩이 어우러진 현대적인 분위기가 특징입니다. 여름철 해수욕과 겨울철 야경이 특히 매력적이며, 다양한 레스토랑과 카페가 즐비합니다.',
+            image: 'picture/haeundae.jpg',
+            alt: '해운대 지역 이미지'
+        },
+        'gwangalli': {
+            title: '광안리',
+            description: '광안리는 광안대교의 화려한 야경으로 유명한 해변 지역입니다. 트렌디한 카페와 바가 많아 젊은이들에게 인기 있으며, 해변 산책과 함께 다양한 해산물 요리를 즐길 수 있습니다.',
+            image: 'picture/gwangalli.jpg',
+            alt: '광안리 지역 이미지'
+        },
+        'suyeong': {
+            title: '수영',
+            description: '수영은 역사와 현대가 공존하는 지역으로, 수영사적공원과 같은 유적지와 함께 현대적인 상점가가 조화를 이룹니다. 지역 축제와 먹거리 골목도 관광객들에게 인기가 많습니다.',
+            image: 'picture/suyeong.jpg',
+            alt: '수영 지역 이미지'
+        },
+        'yeonje': {
+            title: '연제',
+            description: '연제는 부산의 중심부에 위치한 주거 및 상업 지역으로, 부산시민공원과 가까워 여유로운 산책을 즐길 수 있습니다. 지역 내 다양한 로컬 맛집과 쇼핑 시설이 매력적입니다.',
+            image: 'picture/yeonje.jpg',
+            alt: '연제 지역 이미지'
+        },
+        //울산
+        'namgu': {
+            title: '남구',
+            description: '남구는 울산의 중심 지역으로, 울산대공원과 태화강 국가정원이 위치해 자연과 도시가 조화를 이룹니다. 신선한 해산물 요리와 현대적인 쇼핑몰도 큰 매력입니다.',
+            image: 'picture/namgu.jpg',
+            alt: '남구 지역 이미지'
+        },
+        'junggu': {
+            title: '중구',
+            description: '중구는 울산의 전통과 현대가 공존하는 지역으로, 성남동 젊음의 거리와 울산 중앙시장이 활기찬 분위기를 제공합니다. 다양한 먹거리와 쇼핑이 즐거움을 더합니다.',
+            image: 'picture/jungu_4.jpg',
+            alt: '중구 지역 이미지'
+        },
+        'donggu': {
+            title: '동구',
+            description: '동구는 울산의 해안 지역으로, 대왕암공원과 일산 해변이 있어 바다 풍경을 즐기기에 최적입니다. 해양 스포츠와 신선한 회 요리도 큰 인기를 끌고 있습니다.',
+            image: 'picture/donggu.jpg',
+            alt: '동구 지역 이미지'
+        },
+        'bukgu': {
+            title: '북구',
+            description: '북구는 울산의 산업과 자연이 어우러진 지역으로, 강동 해변과 천마산의 등산로가 유명합니다. 조용한 휴식과 야외 활동을 즐기기에 좋은 곳입니다.',
+            image: 'picture/bukgu.jpg',
+            alt: '북구 지역 이미지'
+        },
+        //세종
+        'jochiwon': {
+            title: '조치원',
+            description: '조치원은 세종시의 역사적인 중심지로, 조치원 전통시장과 세종호수공원이 위치해 있습니다. 전통과 현대가 어우러진 분위기에서 맛있는 로컬 음식을 즐길 수 있습니다.',
+            image: 'picture/jochiwon.jpg',
+            alt: '조치원 지역 이미지'
+        },
+        'geumnam': {
+            title: '금남',
+            description: '금남은 세종시의 남쪽에 위치한 지역으로, 금강변의 아름다운 풍경과 산책로가 매력적입니다. 자연 속에서 여유로운 시간을 보내기에 적합한 곳입니다.',
+            image: 'picture/geumnam_2.jpg',
+            alt: '금남 지역 이미지'
+        },
+        'yeongi': {
+            title: '연기',
+            description: '연기는 세종시의 행정 중심지로, 정부세종청사와 국립세종수목원이 자리 잡고 있습니다. 현대적인 도시 풍경과 함께 자연을 즐길 수 있는 지역입니다.',
+            image: 'picture/yeongi.jpg',
+            alt: '연기 지역 이미지'
+        },
+        'boram': {
+            title: '보람',
+            description: '보람은 세종시의 신도시 지역으로, 세종호수공원과 인접해 있어 가족 단위 나들이에 적합합니다. 카페와 레스토랑이 많아 여유로운 분위기를 제공합니다.',
+            image: 'picture/boram.jpg',
+            alt: '보람 지역 이미지'
+        },
+        //서울
+        'gangnam': {
+            title: '강남',
+            description: '강남은 서울의 현대적인 중심지로, 고층 빌딩과 럭셔리 쇼핑몰, 트렌디한 카페와 레스토랑이 즐비합니다. COEX몰의 별마당 도서관과 강남역 주변의 활기찬 밤문화를 즐길 수 있습니다.',
+            image: 'picture/gangnam.jpg',
+            alt: '강남 지역 이미지'
+        },
+        'myeongdong': {
+            title: '명동',
+            description: '명동은 서울의 대표적인 쇼핑과 먹거리 중심지로, 다양한 화장품 매장과 길거리 음식이 유명합니다. 밤에는 화려한 네온사인과 활기찬 분위기가 매력적입니다.',
+            image: 'picture/myeongdong.jpg',
+            alt: '명동 지역 이미지'
+        },
+        'hongdae': {
+            title: '홍대',
+            description: '홍대는 젊음과 예술의 거리로, 독특한 카페, 거리 공연, 벽화 골목이 가득합니다. 젊은이들에게 인기 있는 클럽과 라이브 음악 공연장도 큰 매력입니다.',
+            image: 'picture/hongdae.jpg',
+            alt: '홍대 지역 이미지'
+        },
+        'itaewon': {
+            title: '이태원',
+            description: '이태원은 다문화적인 분위기로 유명한 지역으로, 다양한 국제 요리 레스토랑과 바가 있습니다. 경리단길과 해방촌의 트렌디한 분위기도 큰 인기를 끌고 있습니다.',
+            image: 'picture/itaewon.jpg',
+            alt: '이태원 지역 이미지'
+        },
+        //인천
+        'songdo': {
+            title: '송도',
+            description: '송도는 인천의 현대적인 신도시로, 센트럴파크와 고층 빌딩의 스카이라인이 인상적입니다. 해양 레저와 국제적인 레스토랑을 즐길 수 있는 지역입니다.',
+            image: 'picture/songdo.jpg',
+            alt: '송도 지역 이미지'
+        },
+        'yeonsu': {
+            title: '연수',
+            description: '연수는 송도와 인접한 지역으로, 인천 상륙작전 기념관과 다양한 공원이 있습니다. 조용한 주거지와 함께 자연을 즐기기에 좋은 곳입니다.',
+            image: 'picture/yeonsu.jpg',
+            alt: '연수 지역 이미지'
+        },
+        'bupyeong': {
+            title: '부평',
+            description: '부평은 인천의 상업 중심지로, 부평 지하상가와 다양한 먹거리 골목이 활기찬 분위기를 제공합니다. 부평 시장의 로컬 음식도 큰 매력입니다.',
+            image: 'picture/bupyeong.jpg',
+            alt: '부평 지역 이미지'
+        },
+        'jungu': {
+            title: '중구',
+            description: '중구는 인천 차이나타운과 월미도가 위치한 지역으로, 독특한 문화와 바다 풍경을 즐길 수 있습니다. 월미도 유람선과 해산물 요리가 인기입니다.',
+            image: 'picture/jungu_3.jpg',
+            alt: '중구 지역 이미지'
+        },
+        //광주
+        'sangmu': {
+            title: '상무',
+            description: '상무는 광주의 현대적인 상업 중심지로, 세련된 카페와 레스토랑, 대형 쇼핑몰이 위치해 있습니다. 5·18 기념공원과도 가까워 역사와 현대를 함께 느낄 수 있습니다.',
+            image: 'picture/sangmu.jpg',
+            alt: '상무 지역 이미지'
+        },
+        'dongmyeong': {
+            title: '동명',
+            description: '동명은 광주의 예술과 문화 중심지로, 동명동 카페 거리와 아트 갤러리가 유명합니다. 트렌디한 분위기와 함께 지역 예술을 경험할 수 있습니다.',
+            image: 'picture/dongmyeong.jpg',
+            alt: '동명 지역 이미지'
+        },
+        'chungjang': {
+            title: '충장',
+            description: '충장은 광주의 전통과 현대가 어우러진 지역으로, 충장로 쇼핑 거리와 다양한 먹거리가 있고 매년 열리는 충장 축제가 있습니다. 밤에는 화려한 거리 분위기가 매력적입니다.',
+            image: 'picture/chungjang.jpg',
+            alt: '충장 지역 이미지'
+        },
+        'geumnam': {
+            title: '금남',
+            description: '금남은 광주의 중심지로, 금남로와 국립아시아문화전당이 위치해 있습니다. 문화 행사와 전통 시장을 즐기기에 좋은 지역입니다.',
+            image: 'picture/geumnam.jpg',
+            alt: '금남 지역 이미지'
+        },
+        //대구
+        'dongseongno': {
+            title: '동성로',
+            description: '동성로는 대구의 젊음과 활기가 넘치는 중심지로, 다양한 쇼핑몰과 레스토랑, 카페가 있습니다. 밤에는 거리 공연과 화려한 조명이 매력적입니다.',
+            image: 'picture/dongseongno.jpg',
+            alt: '동성로 지역 이미지'
+        },
+        'suseong': {
+            title: '수성',
+            description: '수성은 대구의 고급 주거와 상업 지역으로, 수성못과 어린이회관이 위치해 있습니다. 가족 단위 나들이와 여유로운 산책을 즐기기에 좋습니다.',
+            image: 'picture/suseong.jpg',
+            alt: '수성 지역 이미지'
+        },
+        'jungu': {
+            title: '중구',
+            description: '중구는 대구의 전통과 현대가 공존하는 지역으로, 서문시장과 근대골목이 유명합니다. 전통 음식과 역사 탐방을 즐길 수 있습니다.',
+            image: 'picture/jungu_2.jpg',
+            alt: '중구 지역 이미지'
+        },
+        'dalseo': {
+            title: '달서',
+            description: '달서는 대구의 주거 중심지로, 두류공원과 이월드의 야경이 매력적입니다. 다양한 레저 활동과 지역 축제를 즐길 수 있는 곳입니다.',
+            image: 'picture/dalseo.jpg',
+            alt: '달서 지역 이미지'
+        },
+        //대전
+        'dunsan': {
+            title: '둔산',
+            description: '둔산은 대전의 현대적인 중심지로, 둔산 대공원과 정부청사가 위치해 있습니다. 세련된 카페와 레스토랑에서 도시의 활기를 느낄 수 있습니다.',
+            image: 'picture/dunsan.jpg',
+            alt: '둔산 지역 이미지'
+        },
+        'yuseong': {
+            title: '유성',
+            description: '유성은 온천과 과학 연구 단지로 유명한 지역으로, 유성온천과 국립중앙과학관, 유림공원이 있습니다. 휴식과 교육적인 여행을 즐기기에 좋습니다.',
+            image: 'picture/yuseong.jpg',
+            alt: '유성 지역 이미지'
+        },
+        'jungu': {
+            title: '중구',
+            description: '중구는 대전의 전통과 현대가 공존하는 중심지로, 명물 빵집 성심당이 위치해 있습니다. 1956년에 시작된 성심당은 튀김소보로와 판타롱 부추빵으로 전국적인 인기를 끌고 있으며, 대전 여행의 필수 코스로 꼽힙니다.',
+            image: 'picture/jungu_1.jpg',
+            alt: '성심당 외관 이미지'
+        },
+        'seogu': {
+            title: '서구',
+            description: '서구는 대전의 자연과 레저를 즐길 수 있는 지역으로, 한밭수목원과 갑천변 산책로가 있습니다. 조용한 휴식과 야외 활동에 적합합니다.',
+            image: 'picture/seogu_1.jpg',
+            alt: '서구 지역 이미지'
+        },
     };
 
     // 버튼 클릭 이벤트 추가
