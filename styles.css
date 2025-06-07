@@ -52,7 +52,7 @@ header {
     flex-wrap: nowrap;
     width: 100%;
     white-space: nowrap;
-    padding-right: 1%;
+    padding: 0%;
     box-sizing: border-box;
     overflow: hidden;
 }
