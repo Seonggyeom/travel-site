@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuList && menuPrevBtn && menuNextBtn) {
         const menuItems = menuList.querySelectorAll('li');
-        const itemWidth = menuItems[0]?.offsetWidth || 0; // 각 메뉴 항목의 너비
-        const scrollAmount = itemWidth + 30; // 마진 포함 이동 거리 (margin: 0 15px이므로 30px 추가)
+        const itemWidth = menuItems[0]?.offsetWidth || 0; 
+        const scrollAmount = itemWidth + 30; 
 
         menuPrevBtn.addEventListener('click', () => {
             menuList.scrollBy({

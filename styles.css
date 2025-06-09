@@ -219,6 +219,7 @@ main {
 
 .region {
     text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .region a {
@@ -245,7 +246,9 @@ main {
     border-radius: 8px;
     padding: 15px;
     background-color: #fff;
-    height: 500px;
+    height: 532px;
+    width: 205px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* 설명 */
@@ -255,6 +258,8 @@ main {
     padding: 15px;
     background-color: #fff;
     height: 500px;
+    width: 670px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* 이미지 */
@@ -264,6 +269,7 @@ main {
     padding: 15px;
     background-color: #fff;
     height: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* 이미지 크기 */
@@ -409,10 +415,46 @@ main {
     }
 
     .slide-image img {
-        max-width: 300px; /* 변경: 모바일에서 이미지 최대 너비 조정 */
+        max-width: 300px; 
         max-height: 100%;
         width: auto;
         height: auto;
         object-fit: contain;
+    }
+
+    /* 지역 HTML 반응형 레이아웃 */
+    .main-content {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    .region-menu-section {
+        order: 1; 
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .region-buttons {
+        flex-direction: row; 
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .description-section {
+        order: 2; 
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .image-section {
+        order: 3; 
+        height: auto;
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .image-section img {
+        width: 100%;
+        height: auto;
     }
 }
